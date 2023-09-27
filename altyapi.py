@@ -7,6 +7,7 @@ from telebot import types
 
 TOKEN = input("6086089724:AAELu6YRS_U0JuJMmWPyhtnBMWJ18iOnPRY")
 bot = telebot.TeleBot(TOKEN)
+
 print(*"BOT AKTİF 🎉")
 
 
