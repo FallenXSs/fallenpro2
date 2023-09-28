@@ -75,12 +75,6 @@ def load_kullanici_anahtarlar():
 
 load_kullanici_anahtarlar()
 
-@bot.message_handler(func=lambda message: message.new_chat_members)
-def welcome_new_members(message):
-    for member in message.new_chat_members:
-        else:
-            bot.send_message(message.chat.id, f"Hoş geldin reyiz {member.first_name}!")
-            
 def save_giris_yapan_kullanicilar():
     with open("kaydedilenler.txt", "w") as file:
         for user_id, reason in banned_users.items():
@@ -118,13 +112,6 @@ def load_olusturulan_anahtarlar():
         pass
 
 load_olusturulan_anahtarlar()
-
-@bot.message_handler(func=lambda message: message.new_chat_members)
-def welcome_new_members(message):
-    for member in message.new_chat_members:
-        else:
-            bot.send_message(message.chat.id, f"Hoş geldin reyiz {member.first_name}!")
-
 
 @bot.message_handler(commands=['login'])
 def login(message):
