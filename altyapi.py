@@ -156,7 +156,16 @@ def tc(message):
             bot.send_message(chat_id, "hata: " + str(e))
     else:
         bot.send_message(chat_id, "Bota giriş yapmamışsınız. Komutu kullanmak için giriş yapın /login")
-
+        
+@bot.message_handler(commands=['admin'])
+def admin_command(message):
+    user_id = message.from_user.id
+    if user_id in sudo_users:
+        bot.reply_to(message, 'Merhaba Yöneticim!💫 İşte komutlarınız:\n\n/wban - Kullanıcıyı Bottan Yasaklarım /adminekle - kullanici id /adminsil - kullanici id\n/unwban - Yasağı Kaldırırım\n/gen - Yeni Key Oluştururum')
+    else:
+        
+        bot.reply_to(message, 'Bu Komutu Kullanmaya İznin Yok aga.🤬') 
+        
 @bot.message_handler(commands=['join'])
 def send_join_buttons(message):
     # İki tane buton oluşturun
