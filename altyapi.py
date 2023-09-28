@@ -47,7 +47,7 @@ def yardim(message):
     user_username = message.from_user.username
 
     
-    reply_text = f"Merhaba {user_name} işte Komutlarım:\n\n/tc - TC Sorgular \n\тBütün Sorgular Ücretli ve ücretsizdir\n\тÜyelik Alımı İçin: @BenYakup\n\n
+    reply_text = f"Merhaba {user_name} işte Komutlarım:\n\n/tc - TC Sorgular \n\nBütün Sorgular Ücretli ve ücretsizdir\n\nÜyelik Alımı İçin: @BenYakup\n\n
     \join - grup ve kanalımıza katılın"
 
     
