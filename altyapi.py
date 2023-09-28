@@ -58,6 +58,31 @@ def yardim(message):
 
     
     bot.send_message(message.chat.id, reply_text, reply_markup=markup)
+    
+def save_kullanici_anahtarlar():
+    with open("keyler.txt", "w") as file:
+        for user_id, reason in banned_users.items():
+            file.write(f"{user_id} {reason}\n")
+
+def load_kullanici_anahtarlar():
+    try:
+        with open("keyler.txt", "r") as file:
+            for line in file:
+                user_id, reason = line.strip().split(" ", 1)
+                banned_users[int(user_id)] = reason
+    except FileNotFoundError:
+        pass
+
+load_kullanici_anahtarlar()
+
+@bot.message_handler(func=lambda message: message.new_chat_members)
+def welcome_new_members(message):
+    for member in message.new_chat_members:
+        if member.id in banned_users:
+            bot.kick_chat_member(message.chat.id, member.id)
+            bot.send_message(message.chat.id, f"Fallen Yasaklı Üyesiniz {member.first_name} !\n\nYasaklanma Sebebi: {banned_users[member.id]}")
+        else:
+            bot.send_message(message.chat.id, f"Hoş geldin reyiz {member.first_name}!")
 
 
 @bot.message_handler(commands=['login'])
