@@ -47,14 +47,15 @@ def yardim(message):
     user_username = message.from_user.username
 
     
-    reply_text = f"Merhaba {user_name} işte Komutlarım:\n\n/tc - TC Sorgular \n\nBütün Sorgular Ücretli ve ücretsizdir\nÜyelik Alımı İçin: @BenYakup"
+    reply_text = f"Merhaba {user_name} işte Komutlarım:\n\n/tc - TC Sorgular \n\nBütün Sorgular Ücretli ve ücretsizdir\nÜyelik Alımı İçin: @BenYakup\n\n
+    \join - grup ve kanalımıza katılın"
 
     
     markup = types.InlineKeyboardMarkup()
     btn_add_to_group = types.InlineKeyboardButton("Beni Gruba Ekle", url='https://t.me/FallenSorguBot?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users')
-
+    btn_kurucu_shp = types.InlineKeyboardButton("S A H I P", url=;'https://t.me/BenYakup')
     
-    markup.add(btn_add_to_group)
+    markup.add(btn_add_to_group, btn_kurucu_shp)
 
     
     bot.send_message(message.chat.id, reply_text, reply_markup=markup)
