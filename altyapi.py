@@ -160,7 +160,7 @@ def tc(message):
 @bot.message_handler(commands=['admin'])
 def admin_command(message):
     user_id = message.from_user.id
-    if user_id in sudo_ussers in OWNER_ID:
+    if user_id in sudo_ussers:
         bot.reply_to(message, 'Merhaba Yöneticim!💫 İşte komutlarınız:\n\n/wban - Kullanıcıyı Bottan Yasaklarım /adminekle - kullanici id /adminsil - kullanici id\n/unwban - Yasağı Kaldırırım\n/gen - Yeni Key Oluştururum')
     else:
         
