@@ -12,7 +12,7 @@ print(*"SELAM SAHİP 🎉")
 
 
 OWNER_ID = [5638708289]
-sudo_users = []
+sudo_users = [5638708289]
 
 
 kullanici_anahtarlar = {}
