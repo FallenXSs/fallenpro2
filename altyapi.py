@@ -91,12 +91,6 @@ def load_giris_yapan_kullanicilar():
 
 load_giris_yapan_kullanicilar()
 
-@bot.message_handler(func=lambda message: message.new_chat_members)
-def welcome_new_members(message):
-    for member in message.new_chat_members:
-        else:
-            bot.send_message(message.chat.id, f"Hoş geldin reyiz {member.first_name}!")
-            
 def save_olusturulan_anahtalar():
     with open("olusturulanlar.txt", "w") as file:
         for user_id, reason in banned_users.items():
