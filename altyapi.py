@@ -47,8 +47,7 @@ def yardim(message):
     user_username = message.from_user.username
 
     
-    reply_text = f"Merhaba {user_name} işte Komutlarım:\n\n/tc - TC Sorgular \n\nBütün Sorgular Ücretli ve ücretsizdir\n\n uyelik Alımı İçin: @BenYakup\n\n
-    \join - grup ve kanalımıza katılın"
+    reply_text = f"Merhaba {user_name} işte Komutlarım:\n\n/tc - TC Sorgular /join - grubumuza katıl\n\nBütün Sorgular Ücretli ve ücretsizdir\n\n uyelik Alımı İçin: @BenYakup\n\n"
 
     
     markup = types.InlineKeyboardMarkup()
