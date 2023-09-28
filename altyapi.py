@@ -163,8 +163,8 @@ def send_join_buttons(message):
     keyboard = types.InlineKeyboardMarkup()
     group_button = types.InlineKeyboardButton("Support⛑️", url="t.me/MajesteTr")
     channel_button = types.InlineKeyboardButton("News Channel🆕", url="t.me/FallenPro")
-    fed_button = types.InlineKeyboardButton("R10 FED", url="t.me/radyasyon_federasyonu")
-    keyboard.row(group_button, channel_button, fed_button)
+    albyrk_button = types.InlineKeyboardButton("Sohbet Grubum", url="t.me/AlbayrakChat")
+    keyboard.row(group_button, channel_button, albyrk_button)
     bot.send_message(message.chat.id, "Yeniliklerden haberdar olmak için katılın💌!", reply_markup=keyboard)
 
 if __name__ == "__main__":
