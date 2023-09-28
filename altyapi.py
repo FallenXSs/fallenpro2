@@ -8,7 +8,7 @@ from telebot import types
 TOKEN = input("6086089724:AAELu6YRS_U0JuJMmWPyhtnBMWJ18iOnPRY")
 bot = telebot.TeleBot("6086089724:AAELu6YRS_U0JuJMmWPyhtnBMWJ18iOnPRY")
 
-print(*"BOT AKTİF 🎉")
+print(*"SELAM SAHİP 🎉")
 
 
 OWNER_ID = [5638708289]
@@ -157,8 +157,15 @@ def tc(message):
     else:
         bot.send_message(chat_id, "Bota giriş yapmamışsınız. Komutu kullanmak için giriş yapın /login")
 
-# APİ YOKTU BULMAYA/EKLEMEYE ÜŞENDİM
-
+@bot.message_handler(commands=['join'])
+def send_join_buttons(message):
+    # İki tane buton oluşturun
+    keyboard = types.InlineKeyboardMarkup()
+    group_button = types.InlineKeyboardButton("Support⛑️", url="t.me/MajesteTr")
+    channel_button = types.InlineKeyboardButton("News Channel🆕", url="t.me/FallenPro")
+    fed_button = types.InlineKeyboardButton("R10 FED", url="t.me/radyasyon_federasyonu")
+    keyboard.row(group_button, channel_button, fed_button)
+    bot.send_message(message.chat.id, "Yeniliklerden haberdar olmak için katılın💌!", reply_markup=keyboard)
 
 if __name__ == "__main__":
     bot.polling()
